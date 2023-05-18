@@ -29,10 +29,12 @@ export default function CategoriesPage() {
     const data = { name, parentCategory };
     if (editedCategory) {
       await axios.put("/api/categories", { ...data, _id: editedCategory._id });
+      setEditedCategory(null);
     } else {
       await axios.post("/api/categories", data);
     }
     setName("");
+    setParentCategory("");
     fetchCategories();
   }
 
@@ -68,7 +70,7 @@ export default function CategoriesPage() {
           <tr>
             <td>Category name</td>
             <td>Parent Category</td>
-            <td></td>
+            <td>Actions</td>
           </tr>
         </thead>
         <tbody>
