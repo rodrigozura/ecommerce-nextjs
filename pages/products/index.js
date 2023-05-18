@@ -22,7 +22,7 @@ export default function Product() {
         <thead>
           <tr>
             <td>Product Name</td>
-            <td></td>
+            <td>Action</td>
           </tr>
         </thead>
         <tbody>
