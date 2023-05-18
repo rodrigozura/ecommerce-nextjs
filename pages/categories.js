@@ -5,7 +5,8 @@ import { useState } from "react";
 export default function CategoriesPage() {
   const [name, setName] = useState("");
 
-  async function saveCategory() {
+  async function saveCategory(evt) {
+    evt.preventDefault();
     await axios.post("/api/categories", { name });
     setName("");
   }
