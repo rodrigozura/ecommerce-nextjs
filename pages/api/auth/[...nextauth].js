@@ -3,6 +3,8 @@ import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@next-auth/mongodb-adapter";
 import clientPromise from "@/lib/mongodb";
 
+const adminEmails = ["rodrigozura@gmail.com"];
+
 export default NextAuth({
   providers: [
     // OAuth authentication providers...
@@ -12,4 +14,13 @@ export default NextAuth({
     }),
   ],
   adapter: MongoDBAdapter(clientPromise),
+  callbacks: {
+    session: ({ session, token, user }) => {
+      if (adminEmails.includes(session?.user.email)) {
+        return session;
+      } else {
+        return false;
+      }
+    },
+  },
 });
