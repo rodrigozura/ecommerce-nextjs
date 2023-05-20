@@ -12,7 +12,7 @@ export default function DeleteProductPage() {
     if (!id) {
       return;
     }
-    axios.get("/api/products?id=" + id).then((response) => {
+    axios.get("/api/products?_id=" + id).then((response) => {
       setProductInfo(response.data);
     });
   }, [id]);
