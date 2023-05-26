@@ -100,7 +100,6 @@ export default function ProductForm({
         value={title}
         onChange={(evt) => setTitle(evt.target.value)}
       />
-      propertiesToFill
       <label>Category</label>
       <select value={category} onChange={(ev) => setCategory(ev.target.value)}>
         <option value={""}>Uncategorized</option>
@@ -111,20 +110,22 @@ export default function ProductForm({
       </select>
       {propertiesToFill.length > 0 &&
         propertiesToFill.map((p) => (
-          <div className="flex gap-1">
-            <div>{p.name}</div>
-            <select
-              value={productProperties[p.name]}
-              onChange={(ev) => setProductProp(p.name, ev.target.value)}
-            >
-              {p.values.map((v) => (
-                <option value={v}>{v}</option>
-              ))}
-            </select>
+          <div className="">
+            <label>{p.name[0].toUpperCase() + p.name.substring(1)}</label>
+            <div>
+              <select
+                value={productProperties[p.name]}
+                onChange={(ev) => setProductProp(p.name, ev.target.value)}
+              >
+                {p.values.map((v) => (
+                  <option value={v}>{v}</option>
+                ))}
+              </select>
+            </div>
           </div>
         ))}
       <label>Photos</label>
-      <div className="mb-2 flex flex-wrap gap-2">
+      <div className="mb-2 flex flex-wrap gap-2 p-4">
         {!!images?.length &&
           images.map((link) => (
             <div key={link} className="h-24">
@@ -139,7 +140,7 @@ export default function ProductForm({
         <label
           className="w-24 h-24 cursor-pointer border text-center flex flex-col 
         items-center justify-center text-sm gap-1 text-gray-500 
-        rounded-lg bg-gray-200"
+        rounded-lg bg-white shadow-md border border-gray-200"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

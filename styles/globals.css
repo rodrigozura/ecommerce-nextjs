@@ -7,8 +7,9 @@ img{
 }
 
 input, textarea, select{
-    @apply border-2 border-gray-300 rounded-md px-1 w-full;
-    @apply mb-2
+    @apply border-2 border-gray-300 rounded-sm px-1 w-full py-2 px-4;
+    @apply shadow-md;
+    @apply mb-2;
 }
 
 input:focus, textarea:focus, select:focus{
@@ -16,33 +17,33 @@ input:focus, textarea:focus, select:focus{
 }
 
 h1{
-    @apply text-blue-900 mb-2 text-xl;
+    @apply text-gray-800 mb-4 text-xl;
 }
 
 label {
-    @apply text-blue-900;
+    @apply text-gray-600 text-sm;
 }
 
 .btn-primary{
-    @apply bg-blue-900 text-white px-4 py-1 rounded-md mr-1;
+    @apply bg-primary text-white px-4 py-1 rounded-sm mr-1;
 }
 
 
 table.basic{
-    @apply w-full;
-}
+    @apply w-full bg-white rounded-sm shadow-md;
+}g
 
 table.basic thead tr td{
-    @apply bg-blue-100;
+    @apply text-sm text-gray-600 uppercase border-b border-gray-900 px-4 py-2;
 }
 
 
 table.basic tr td{
-    @apply border border-blue-200 p-1;
+    @apply  px-4 py-1;
 }
 
 table.basic a{
-    @apply bg-blue-900 text-white text-sm p-1 px-2 rounded-md inline-flex gap-1 mr-1;
+    @apply text-white px-4 rounded-sm mr-1 inline-flex mx-1 items-center gap-1 bg-gray-700 text-sm py-1;
 }
 
 .btn-red,.btn-default{
@@ -50,9 +51,9 @@ table.basic a{
 }
 
 .btn-red{
-    @apply bg-red-800 text-white;
+    @apply bg-red-800 text-white px-4 py-1 rounded-sm mr-1;
 }
 
 .btn-default{
-    @apply bg-gray-500 text-white;
+    @apply bg-gray-800 text-white px-4 py-1 rounded-sm mr-1;
 }
